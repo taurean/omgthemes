@@ -1,0 +1,214 @@
+@import url("reset.css");
+
+:root {
+  --accent-color: #ff3d00;
+  --color-accent: #ff3d00;
+  --color-background: #fff;
+  --color-foreground: #000;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #17181b;
+    --color-foreground: #fff;
+    --accent-color: #0fba91;
+    --color-accent: #0fba91;
+  }
+}
+
+body {
+  font-family: "SF Mono", SFMono-Regular, ui-monospace, "DejaVu Sans Mono",
+  Menlo, Consolas, monospace;
+  color: var(--color-foreground);
+  background-color: var(--color-background);
+}
+
+main {
+  padding: var(--space-xl-3xl);
+}
+
+#profile-picture-container img {
+  width: 100%;
+  max-width: 200px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+  margin-top: var(--space-m);
+}
+
+h1:before,
+h2:before,
+h3:before,
+h4:before,
+h5:before,
+h6:before {
+  position: absolute;
+  opacity: 0.2;
+  font-weight: normal;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: var(--step-6);
+}
+
+h1:before {
+  content: '#';
+  left: -1.1ch;
+}
+
+h2 {
+  font-size: var(--step-5);
+}
+
+h2:before {
+  content: '##';
+  left: -2.2ch;
+}
+
+h3 {
+  font-size: var(--step-4);
+}
+
+h3:before {
+  content: '###';
+  left: -3.3ch;
+}
+
+h4 {
+  font-size: var(--step-3);
+}
+
+h4:before {
+  content: '####';
+  left: -4.4ch;
+}
+
+h5 {
+  font-size: var(--step-2);
+}
+
+h5:before {
+  content: '#####';
+  left: -5.5ch;
+}
+
+h6 {
+  font-size: var(--step-1);
+}
+
+h6:before {
+  content: '######';
+  left: -6.6ch;
+}
+
+h1#name,
+#bio h2,
+#latest-status h2 {
+  font-size: var(--step-2);
+  font-weight: 600;
+}
+
+a:before,
+a:after,
+em:before,
+em:after,
+strong:before,
+strong:after,
+del:before,
+del:after,
+code:before,
+code:after,
+blockquote:before,
+li:before {
+  opacity: 0.2;
+}
+
+a:before,
+a:after {
+  content: '[';
+}
+
+a:after {
+  content: '](' attr(href) ')';
+  /* max-width: 20ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom; */
+}
+
+#name a:before,
+#name a:after {
+  content: '';
+}
+
+em, strong, del, code {
+  position: relative;
+}
+
+em {
+  font-style: italic;
+}
+
+em:before,
+em:after {
+  content: '_';
+}
+
+strong {
+  font-weight: 700;
+}
+
+strong:before,
+strong:after {
+  content: '**';
+}
+
+del {
+  text-decoration: line-through;
+}
+
+del:before,
+del:after {
+  content: "~~";
+}
+
+code:before,
+code:after {
+  content: "`";
+}
+
+blockquote {
+  position: relative;
+}
+
+blockquote:before {
+  position: absolute;
+  content: "> ";
+  left: -2ch;
+}
+
+ul li {
+  position: relative;
+}
+
+ul li:before {
+  position: absolute;
+  content: '*';
+  left: -2ch;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+li ol,
+li ul {
+  padding-left: var(--space-xl);
+}
+
+p {
+  max-width: 70ch;
+}

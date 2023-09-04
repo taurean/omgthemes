@@ -1,0 +1,199 @@
+/*
+A reset thats an amalgamation of other resets I really appreciate
+
+Credit to:
+Josh Comeau
+https://www.joshwcomeau.com/css/custom-css-reset/
+
+Andy Bell
+https://github.com/hankchizljaw/modern-css-reset
+
+Elad Shechter
+https://github.com/elad2412/the-new-css-reset
+*/
+
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding-left: 0;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a, button {
+    cursor: revert;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+[visually-hidden]:not(#specificity-override),
+[visually-hidden=true]:not(#specificity-override),
+.util\:sr-only:not(#specificity-override) {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 0.1rem;
+  margin: -0.1rem;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 0.0001rem;
+  display: inline-block;
+  white-space: nowrap;
+  right: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+a,
+button {
+    cursor: revert;
+}
+
+
+table {
+    border-collapse: collapse;
+}
+
+body {
+    font-family: BlinkMacSystemFont, -apple-system, "Roboto", "Droid Sans", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: var(--step-0);
+}
+
+/* @link https://utopia.fyi/space/calculator?c=320,12,1.067,1440,20,1.2,6,3,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,14 */
+
+:root {
+    /* Space 3xs: 3px → 5px */
+    --space-3xs: clamp(0.19rem, calc(0.15rem + 0.18vw), 0.31rem);
+    /* Space 2xs: 6px → 10px */
+    --space-2xs: clamp(0.38rem, calc(0.3rem + 0.36vw), 0.63rem);
+    /* Space xs: 9px → 15px */
+    --space-xs: clamp(0.56rem, calc(0.46rem + 0.54vw), 0.94rem);
+    /* Space s: 12px → 20px */
+    --space-s: clamp(0.75rem, calc(0.61rem + 0.71vw), 1.25rem);
+    /* Space m: 18px → 30px */
+    --space-m: clamp(1.13rem, calc(0.91rem + 1.07vw), 1.88rem);
+    /* Space l: 24px → 40px */
+    --space-l: clamp(1.5rem, calc(1.21rem + 1.43vw), 2.5rem);
+    /* Space xl: 36px → 60px */
+    --space-xl: clamp(2.25rem, calc(1.82rem + 2.14vw), 3.75rem);
+    /* Space 2xl: 48px → 80px */
+    --space-2xl: clamp(3rem, calc(2.43rem + 2.86vw), 5rem);
+    /* Space 3xl: 72px → 120px */
+    --space-3xl: clamp(4.5rem, calc(3.64rem + 4.29vw), 7.5rem);
+    /* One-up pairs */
+    /* Space 3xs-2xs: 3px → 10px */
+    --space-3xs-2xs: clamp(0.19rem, calc(0.06rem + 0.63vw), 0.63rem);
+    /* Space 2xs-xs: 6px → 15px */
+    --space-2xs-xs: clamp(0.38rem, calc(0.21rem + 0.8vw), 0.94rem);
+    /* Space xs-s: 9px → 20px */
+    --space-xs-s: clamp(0.56rem, calc(0.37rem + 0.98vw), 1.25rem);
+    /* Space s-m: 12px → 30px */
+    --space-s-m: clamp(0.75rem, calc(0.43rem + 1.61vw), 1.88rem);
+    /* Space m-l: 18px → 40px */
+    --space-m-l: clamp(1.13rem, calc(0.73rem + 1.96vw), 2.5rem);
+    /* Space l-xl: 24px → 60px */
+    --space-l-xl: clamp(1.5rem, calc(0.86rem + 3.21vw), 3.75rem);
+    /* Space xl-2xl: 36px → 80px */
+    --space-xl-2xl: clamp(2.25rem, calc(1.46rem + 3.93vw), 5rem);
+    /* Space 2xl-3xl: 48px → 120px */
+    --space-2xl-3xl: clamp(3rem, calc(1.71rem + 6.43vw), 7.5rem);
+    /* Custom pairs */
+    /* Space s-l: 12px → 40px */
+    --space-s-l: clamp(0.75rem, calc(0.25rem + 2.5vw), 2.5rem);
+}
+
+/* @link https://utopia.fyi/type/calculator?c=320,12,1.067,1440,20,1.2,6,3,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,14 */
+
+:root {
+    /* Step -3: 9.88px → 11.57px */
+    --step--3: clamp(0.62rem, calc(0.59rem + 0.15vw), 0.72rem);
+    /* Step -2: 10.54px → 13.89px */
+    --step--2: clamp(0.66rem, calc(0.6rem + 0.3vw), 0.87rem);
+    /* Step -1: 11.25px → 16.67px */
+    --step--1: clamp(0.7rem, calc(0.61rem + 0.48vw), 1.04rem);
+    /* Step 0: 12.00px → 20.00px */
+    --step-0: clamp(0.75rem, calc(0.61rem + 0.71vw), 1.25rem);
+    /* Step 1: 12.80px → 24.00px */
+    --step-1: clamp(0.8rem, calc(0.6rem + 1vw), 1.5rem);
+    /* Step 2: 13.66px → 28.80px */
+    --step-2: clamp(0.85rem, calc(0.58rem + 1.35vw), 1.8rem);
+    /* Step 3: 14.58px → 34.56px */
+    --step-3: clamp(0.91rem, calc(0.55rem + 1.78vw), 2.16rem);
+    /* Step 4: 15.55px → 41.47px */
+    --step-4: clamp(0.97rem, calc(0.51rem + 2.31vw), 2.59rem);
+    /* Step 5: 16.60px → 49.77px */
+    --step-5: clamp(1.04rem, calc(0.45rem + 2.96vw), 3.11rem);
+    /* Step 6: 17.71px → 59.72px */
+    --step-6: clamp(1.11rem, calc(0.36rem + 3.75vw), 3.73rem);
+}
+
+[visually-hidden]:not(#specificityOverride),
+[visually-hidden="true"]:not(#specificityOverride) {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 0.1rem;
+    margin: -0.1rem;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 0.0001rem;
+    display: inline-block;
+    white-space: nowrap;
+    right: 0;
+}
