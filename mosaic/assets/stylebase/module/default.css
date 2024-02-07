@@ -64,7 +64,7 @@ button {
   cursor: revert;
 }
 a:hover,
-a:focus {
+a:focus-visible {
   /* Placeholder for now… */
   text-decoration: underline;
 }
