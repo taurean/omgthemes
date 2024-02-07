@@ -1,47 +1,36 @@
-/* @link https://utopia.fyi/type/calculator?c=314,14,1.125,1215,18,1.25,10,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,m,2xl,12 */
+/* @link https://utopia.fyi/type/calculator?c=314,16,1.125,1215,20,1.25,10,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,m,2xl,12 */
 
 :root {
-  /* Step -2: 11.06px → 11.52px */
-  --step--2: clamp(0.6913rem, 0.6812rem + 0.0511vw, 0.72rem);
-
-  /* Step -1: 12.44px → 14.40px */
-  --step--1: clamp(0.7775rem, 0.7348rem + 0.2175vw, 0.9rem);
-
-  /* Step 0: 14.00px → 18.00px */
-  --step-0: clamp(0.875rem, 0.7879rem + 0.444vw, 1.125rem);
-
-  /* Step 1: 15.75px → 22.50px */
-  --step-1: clamp(0.9844rem, 0.8374rem + 0.7492vw, 1.4063rem);
-
-  /* Step 2: 17.72px → 28.13px */
-  --step-2: clamp(1.1075rem, 0.8808rem + 1.1554vw, 1.7581rem);
-
-  /* Step 3: 19.93px → 35.16px */
-  --step-3: clamp(1.2456rem, 0.9139rem + 1.6903vw, 2.1975rem);
-
-  /* Step 4: 22.43px → 43.95px */
-  --step-4: clamp(1.4019rem, 0.9331rem + 2.3885vw, 2.7469rem);
-
-  /* Step 5: 25.23px → 54.93px */
-  --step-5: clamp(1.5769rem, 0.93rem + 3.2963vw, 3.4331rem);
-
-  /* Step 6: 28.38px → 68.66px */
-  --step-6: clamp(1.7738rem, 0.8964rem + 4.4706vw, 4.2913rem);
-
-  /* Step 7: 31.93px → 85.83px */
-  --step-7: clamp(1.9956rem, 0.8216rem + 5.9822vw, 5.3644rem);
-
-  /* Step 8: 35.92px → 107.29px */
-  --step-8: clamp(2.245rem, 0.6905rem + 7.9212vw, 6.7056rem);
-
-  /* Step 9: 40.41px → 134.11px */
-  --step-9: clamp(2.5256rem, 0.4847rem + 10.3996vw, 8.3819rem);
-
-  /* Step 10: 45.46px → 167.64px */
-  --step-10: clamp(2.8413rem, 0.18rem + 13.5605vw, 10.4775rem);
+  /* Step -2: 12.642px → 12.8px */
+  --step--2: clamp(0.7901rem, 0.7867rem + 0.0175vi, 0.8rem);
+  /* Step -1: 14.2222px → 16px */
+  --step--1: clamp(0.8889rem, 0.8502rem + 0.1973vi, 1rem);
+  /* Step 0: 16px → 20px */
+  --step-0: clamp(1rem, 0.9129rem + 0.444vi, 1.25rem);
+  /* Step 1: 18px → 25px */
+  --step-1: clamp(1.125rem, 0.9725rem + 0.7769vi, 1.5625rem);
+  /* Step 2: 20.25px → 31.25px */
+  --step-2: clamp(1.2656rem, 1.026rem + 1.2209vi, 1.9531rem);
+  /* Step 3: 22.7813px → 39.0625px */
+  --step-3: clamp(1.4238rem, 1.0692rem + 1.807vi, 2.4414rem);
+  /* Step 4: 25.6289px → 48.8281px */
+  --step-4: clamp(1.6018rem, 1.0965rem + 2.5748vi, 3.0518rem);
+  /* Step 5: 28.8325px → 61.0352px */
+  --step-5: clamp(1.802rem, 1.1006rem + 3.5741vi, 3.8147rem);
+  /* Step 6: 32.4366px → 76.2939px */
+  --step-6: clamp(2.0273rem, 1.072rem + 4.8676vi, 4.7684rem);
+  /* Step 7: 36.4912px → 95.3674px */
+  --step-7: clamp(2.2807rem, 0.9983rem + 6.5345vi, 5.9605rem);
+  /* Step 8: 41.0526px → 119.2093px */
+  --step-8: clamp(2.5658rem, 0.8634rem + 8.6744vi, 7.4506rem);
+  /* Step 9: 46.1841px → 149.0116px */
+  --step-9: clamp(2.8865rem, 0.6468rem + 11.4126vi, 9.3132rem);
+  /* Step 10: 51.9571px → 186.2645px */
+  --step-10: clamp(3.2473rem, 0.3219rem + 14.9065vi, 11.6415rem);
 }
 
 :root {
   --font-serif: Georgia, "Times New Roman", Times, serif;
-  --font-sans-serif: BlinkMacSystemFont, -apple-system, "Roboto", "Droid Sans", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans-serif: BlinkMacSystemFont, -apple-system, "Roboto", "Droid Sans",
+    "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

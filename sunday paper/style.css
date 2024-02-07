@@ -7,34 +7,102 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Mori";
+  src: url("assets/font/MoriBook.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mori";
+  src: url("assets/font/MoriBookItalic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Mori";
+  src: url("assets/font/MoriExtraBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mori";
+  src: url("assets/font/MoriExtraBold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Writer Text";
+  src: url("assets/font/WriterRegularText.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Writer Text";
+  src: url("assets/font/WriterRegularItalic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Writer Text";
+  src: url("assets/font/WriterBoldText.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Writer Text";
+  src: url("assets/font/WriterBoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("assets/font/GeistMono.woff2") format("woff2");
+  font-weight: 32 240;
+}
+
 :root {
-  --font-masthead: "Jubilee", sans-serif;
-  --font-sans-serif: var(--font-masthead);
+  --font-masthead: "Jubilee", serif;
+  --font-sans-serif: "Mori", sans-serif;
+  --font-serif: "Writer Text", serif;
+  --font-mono: "Geist Mono", monospace;
 
   --hue-fg: var(--hue-neutral-900);
   --hue-bg: var(--hue-neutral-50);
-  --hue-code-fg: var(--hue-fg);
-  --hue-code-bg: var(--hue-neutral-200);
+  --hue-bg-contrast: white;
+  --hue-bg-subtle: var(--hue-neutral-100);
+  --hue-accent: oklch(56.53% 0.143 243.53);
+  --hue-border: var(--hue-neutral-400);
+  --hue-border-shadow: white;
   --hue-mark-bg: var(--hue-yellow-200);
-  --hue-anchor-underline: var(--hue-blue-200);
-  --hue-anchor-underline-hover: var(--hue-blue-400);
+  --hue-focus-frame: var(--hue-neutral-400);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --hue-fg: var(--hue-neutral-200);
-    --hue-bg: var(--hue-neutral-900);
-    --hue-code-fg: var(--hue-fg);
-    --hue-code-bg: var(--hue-neutral-800);
+    --hue-bg: var(--hue-neutral-950);
+    --hue-bg-contrast: black;
+    --hue-bg-subtle: var(--hue-neutral-900);
+    --hue-border: var(--hue-neutral-900);
     --hue-mark-bg: var(--hue-yellow-700);
-    --hue-anchor-underline: var(--hue-blue-800);
-    --hue-anchor-underline-hover: var(--hue-blue-600);
+    --hue-mark-bg: color-mix(in oklch, var(--hue-yellow-700), black 30%);
+    --hue-focus-frame: white;
   }
 }
 
 body {
   color: var(--hue-fg);
   background-color: var(--hue-bg);
+  font-family: var(--font-serif);
 }
 
 body > header,
@@ -44,69 +112,61 @@ body > main {
   margin-inline: auto;
 }
 
-.weblog-title {
-  background-color: var(--hue-fg);
-  color: var(--hue-bg);
-  display: inline-block;
-  font-size: var(--step-0);
-  line-height: 1;
-  padding: var(--space-2xs);
-  border-radius: 0 0 var(--radii-chip) var(--radii-chip);
-}
+header .weblog-title {
+  display: grid;
+  grid-template-columns: var(--grid-default);
+  padding-block: var(--space-m) var(--space-s);
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold;
-  max-width: 100%;
-  position: relative;
-}
-
-h1 {
-  font-size: var(--step-3);
-
-  sup {
-    font-size: var(--step-1);
+  a {
+    grid-column: 2 / span 10;
   }
-}
-
-h2 {
-  font-size: var(--step-3);
-}
-
-h3 {
-  font-size: var(--step-2);
-}
-
-h4 {
-  font-size: var(--step-1);
-  text-transform: uppercase;
-}
-
-h5 {
-  text-transform: uppercase;
-}
-
-h6 {
-  font-size: var(--step--1);
-  text-transform: uppercase;
 }
 
 hr {
   display: block;
   border-top: 1px;
-  background-color: var(--hue-neutral-300);
+  background-color: var(--hue-border);
   height: 1px;
   width: 100%;
-  margin: var(--space-s-l) 0;
+  margin: var(--space-m) 0;
+}
+
+main.weblog-post {
+  display: grid;
+  grid-template-columns: var(--grid-default);
+
+  article {
+    grid-column: 2 / span 10;
+  }
+}
+
+a:empty:not([aria-label]):not([aria-labelledby]) {
+  display: none;
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.125em;
+  text-decoration-color: color-mix(in srgb, var(--hue-fg) 50%, black);
+
+  &:hover,
+  &:focus-visible {
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--hue-accent);
+  }
+
+  &:focus-visible {
+    outline-width: 4px;
+    outline-style: ridge;
+    outline-offset: var(--space-3xs);
+    outline-color: var(--hue-focus-frame);
+    opacity: 1;
+  }
 }
 
 article {
   margin-block: var(--space-s-10xl) var(--space-8xl);
-  padding-inline: var(--grid-gutter);
 
   h1,
   h2,
@@ -117,22 +177,58 @@ article {
   p,
   ol,
   ul,
-  blockquote {
-    margin-block-end: var(--space-2xs);
+  blockquote,
+  img {
+    margin-block-end: var(--space-m);
   }
 
-  h1,
+  .weblog-subtitle,
+  .weblog-tagline,
   h2,
   h3,
   h4,
-  h5 {
-    max-width: 40ch;
+  h5,
+  h6 {
+    max-width: 30ch;
     text-wrap: balance;
     font-weight: normal;
+    line-height: 1.2;
 
     * + & {
       margin-block-start: var(--space-m);
     }
+  }
+
+  h2 {
+    font-family: var(--font-masthead);
+    font-size: var(--step-5);
+  }
+
+  .weblog-subtitle,
+  h3 {
+    font-size: var(--step-3);
+  }
+
+  .weblog-tagline,
+  h4 {
+    font-size: var(--step-2);
+  }
+
+  h5 {
+    font-size: var(--step-1);
+    font-weight: bold;
+  }
+
+  h6 {
+    font-size: var(--step-0);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .weblog-subtitle,
+  h3 {
+    font-family: var(--font-sans-serif);
+    font-weight: bold;
   }
 
   p,
@@ -141,12 +237,21 @@ article {
   ol,
   ul {
     max-width: 64ch;
+    text-wrap: pretty;
   }
 
-  p,
-  hr {
-    max-width: 64ch;
-    text-wrap: pretty;
+  & > p:first-of-type:first-line {
+    font-weight: bold;
+    color: var(--hue-accent);
+    font-variant-caps: all-small-caps;
+  }
+
+  & > p:first-of-type::first-letter {
+    line-height: 1;
+    margin-right: 0.125em;
+    font-weight: normal;
+    initial-letter: 3 2;
+    -webkit-initial-letter: 3 2;
   }
 
   strong {
@@ -159,9 +264,14 @@ article {
 
   sup,
   sub {
-    font-size: 0.6em;
+    font-size: 0.8em;
     display: inline-block;
     opacity: 0.6;
+    margin-left: 0.125em;
+
+    &:focus-within {
+      opacity: 1;
+    }
   }
 
   sup {
@@ -169,25 +279,31 @@ article {
   }
 
   code {
-    background-color: var(--hue-code-bg);
-    color: var(--hue-code-fg);
+    font-family: var(--font-mono);
+    font-weight: 100;
   }
 
   pre {
-    background-color: var(--hue-neutral-200);
-    background-color: var(--hue-code-bg);
     border-radius: var(--radii-chip);
     overflow-x: auto;
     width: 100%;
     margin-block: var(--space-m);
     margin-inline: calc(var(--space-xs) * -1);
-    padding: var(--space-2xs) var(--space-s);
+    padding: var(--space-s);
+    background-color: var(--hue-bg-contrast);
+    border: 1px solid var(--hue-border);
 
     code {
       display: block;
       white-space: pre-wrap;
       background-color: unset;
     }
+  }
+
+  blockquote {
+    font-size: var(--step-2);
+    font-style: italic;
+    max-width: 48ch;
   }
 
   mark {
@@ -198,35 +314,25 @@ article {
     text-decoration-skip-ink: none;
   }
 
-  a {
-    text-decoration: underline;
-    text-decoration-color: var(--hue-anchor-underline);
-    text-decoration-skip-ink: none;
-    text-decoration-thickness: 0.4em;
-    text-underline-offset: -0.3em;
+  ol,
+  ul {
+    padding-inline-start: var(--space-s);
 
-    &:hover,
-    &:focus {
-      text-decoration-thickness: 1em;
-      text-underline-offset: -0.8em;
+    & ol,
+    & ul {
+      padding-inline-start: var(--space-m);
+      list-style-type: circle;
     }
   }
 
-  ol,
-  ul {
-    padding-left: 0;
-    margin: 0;
-  }
-
   li {
-    list-style-type: none;
     position: relative;
     margin-left: 0;
     padding-left: 0;
   }
 
   table {
-    border: 1px solid var(--hue-neutral-500);
+    font-family: var(--font-sans-serif);
     display: table;
     width: 100%;
     max-width: 64ch;
@@ -236,12 +342,13 @@ article {
     display: table-header-group;
 
     tr {
-      background-color: var(--hue-neutral-200);
       font-weight: bold;
     }
 
     th {
       padding: var(--space-4xs) var(--space-2xs);
+      background-color: var(--hue-fg);
+      color: var(--hue-bg);
     }
   }
 
@@ -249,7 +356,7 @@ article {
     display: table-row;
 
     &:nth-of-type(2n) {
-      background-color: var(--hue-neutral-100);
+      background-color: var(--hue-bg-subtle);
     }
   }
 
@@ -257,5 +364,73 @@ article {
     display: table-cell;
     font-family: var(--font-sans-grotesque);
     padding: var(--space-4xs) var(--space-2xs);
+  }
+}
+
+.weblog-footer {
+  color: var(--hue-bg);
+  background-color: var(--hue-fg);
+  font-family: var(--font-sans-serif);
+}
+
+.weblog-footer-wrapper {
+  display: grid;
+  grid-template-columns: var(--grid-default);
+  width: 100%;
+  max-width: var(--grid-max-width);
+  padding-inline: var(--grid-gutter);
+  margin-inline: auto;
+}
+
+#weblog-navigation,
+.weblog-footer-header,
+.weblog-recent-posts,
+.weblog-footer-attribution,
+.copyright {
+  grid-column: 2 / span 10;
+}
+
+#weblog-navigation {
+  ul {
+    list-style-type: none;
+    display: flex;
+    padding-block: var(--space-m);
+  }
+
+  li {
+    margin-inline-end: var(--space-s);
+  }
+}
+
+.weblog-footer-header {
+  font-weight: bold;
+  font-size: var(--step-1);
+  margin-block: var(--space-xs);
+}
+
+.weblog-recent-posts {
+  font-size: var(--step-0);
+
+  li {
+    margin-block-end: var(--space-xs);
+    opacity: 0.7;
+  }
+}
+
+.weblog-footer-attribution {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--hue-accent);
+  font-size: var(--step-6);
+  margin-block: var(--space-m) var(--space-s);
+}
+
+.weblog-footer-wrapper .copyright {
+  font-size: var(--step--2);
+  margin-block-end: var(--space-m);
+
+  code {
+    font-family: var(--font-mono);
+    font-weight: 100;
   }
 }

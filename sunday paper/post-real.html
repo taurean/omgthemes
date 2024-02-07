@@ -35,20 +35,21 @@
 
   <body>
     <header>
-      <h1 class="weblog-title"><a href="/">notes</a></h1>
+      <h1 class="weblog-title"><a href="/"> ⃪ taurean.bryant.land</a></h1>
     </header>
 
-    <main>
-      <article>
-        <h1 id="content-apple-vision-pro--predicting-the-evolution-of-tech">
-          <a
-            href="#content-apple-vision-pro--predicting-the-evolution-of-tech"
-            class="heading-permalink"
-            aria-hidden="true"
-            title="Permalink"
-          ></a
-          >Apple Vision Pro &amp; Predicting the Evolution of Tech
-        </h1>
+    <main class="weblog-post">
+      <article class="weblog-article">
+        <hgroup
+          class="heading-group"
+          role="group"
+          aria-roledescription="Heading group"
+        >
+          <h2>Apple Vision Pro &amp; Predicting the Evolution of Tech</h2>
+          <p class="weblog-subtitle" aria-roledescription="subtitle"></p>
+          <p class="weblog-tagline" aria-roledescription="tag line"></p>
+        </hgroup>
+
         <p>
           The announcement of Apple's Vision Pro was bound to get instant
           attention. What's interested me since wasn't just the product itself,
@@ -125,31 +126,57 @@
           ways in which we use them.
         </p>
 
+        <hr />
+
         <aside class="post-info">
           <date>June 6, 2023 3:00 PM</date>
         </aside>
-        <aside class="post-tags"></aside>
       </article>
-
-      <hr />
-
-      <h2>Recent posts</h2>
-
-      <ul>
-        <li>
-          <a
-            href="/2024/01/the-voyager-missions-humanitys-message-to-the-cosmos-1"
-            >The Voyager Missions: Humanity's Message to the Cosmos
-            <sup id="fnref:1"></sup></a
-          ><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a>
-        </li>
-        <li><a href="/2024/01/your-new-post">Your new post</a></li>
-        <li><a href="/2024/01/init">init</a></li>
-      </ul>
     </main>
 
-    <footer>
-      <p>Made with <a href="https://weblog.lol">weblog.lol</a>.</p>
+    <footer class="weblog-footer">
+      <div class="weblog-footer-wrapper">
+        <nav id="weblog-navigation">
+          <ul>
+            <li><a href="/">home</a></li>
+            <li><a href="/now">now</a></li>
+            <li>
+              <a href="https://bsky.app/profile/taurean.bryant.land">bsky</a>
+            </li>
+            <li><a href="https://social.lol/@taurean">mastodon</a></li>
+            <li><a href="https://posts.cv/taurean">posts</a></li>
+            <li><a href="https://glass.photo/taurean">glass</a></li>
+          </ul>
+        </nav>
+
+        <h2 class="weblog-footer-header">Read something new</h2>
+
+        <ul class="weblog-recent-posts">
+          <li>
+            <a href="/2024/02/the-more-we-get-together"
+              >The More We Get Together</a
+            >
+          </li>
+          <li>
+            <a
+              href="/2024/01/the-voyager-missions-humanitys-message-to-the-cosmos"
+              >The Voyager Missions: Humanity's Message to the Cosmos</a
+            >
+          </li>
+          <li>
+            <a href="/2023/06/apple-vision-pro-predicting-the-evolution-of-tech"
+              >Apple Vision Pro &amp; Predicting the Evolution of Tech</a
+            >
+          </li>
+        </ul>
+        <p class="weblog-footer-attribution">
+          <a href="/">taurean.bryant.land</a>
+        </p>
+        <p class="copyright">
+          Copyright Ⓒ<code>{currentYear}</code> — Taurean Bryant. Made with
+          <a href="https://weblog.lol">weblog.lol</a>.
+        </p>
+      </div>
     </footer>
   </body>
 </html>
